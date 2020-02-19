@@ -117,18 +117,18 @@ const incrementPackageJsonVersion = async () => {
   console.log('✅ Success!')
 }
 
-const incrementVersionInJSFiddle = async () => {
-  stepTitle('⬆️ Increment version in JSFiddle...')
-  const version = config.data.versionRC ? config.data.versionRC : VERSION
+// const incrementVersionInJSFiddle = async () => {
+//   stepTitle('⬆️ Increment version in JSFiddle...')
+//   const version = config.data.versionRC ? config.data.versionRC : VERSION
 
-  replaceInFile(
-    'demo/fiddle/demo.details',
-    /- https:\/\/assets\.onfido\.com\/web-sdk-releases\/.*\/onfido\.min\.js\n\s{3}- https:\/\/assets\.onfido\.com\/web-sdk-releases\/.*\/style\.css/,
-    () => `- https://assets.onfido.com/web-sdk-releases/${version}/onfido.min.js\n${' '.repeat(3)}- https://assets.onfido.com/web-sdk-releases/${version}/style.css`
-  )
-  console.log('✅ Success!')
+//   replaceInFile(
+//     'demo/fiddle/demo.details',
+//     /- https:\/\/assets\.onfido\.com\/web-sdk-releases\/.*\/onfido\.min\.js\n\s{3}- https:\/\/assets\.onfido\.com\/web-sdk-releases\/.*\/style\.css/,
+//     () => `- https://assets.onfido.com/web-sdk-releases/${version}/onfido.min.js\n${' '.repeat(3)}- https://assets.onfido.com/web-sdk-releases/${version}/style.css`
+//   )
+//   console.log('✅ Success!')
 
-}
+// }
 
 const npmInstallAndBuild = async () => {
   stepTitle('🌍 Making sure our NPM dependencies are up to date...')
@@ -210,32 +210,32 @@ const makeReleaseCommit = async () => {
   console.log('✅ Success!')
 }
 
-const loginToS3 = async () => {
-  stepTitle('🔐 Sign in to S3 with 1Password')
-  console.log('On another shell, please run the following commands:')
-  console.log(`${chalk.bold.yellow(config.data.OP_LOGIN_CMD)}`)
-  console.log(`${chalk.bold.yellow(config.data.S3_LOGIN_CMD)}`)
-  await proceedYesNo(`Have all of these commands succeeded?`)
-}
+// const loginToS3 = async () => {
+//   stepTitle('🔐 Sign in to S3 with 1Password')
+//   console.log('On another shell, please run the following commands:')
+//   console.log(`${chalk.bold.yellow(config.data.OP_LOGIN_CMD)}`)
+//   console.log(`${chalk.bold.yellow(config.data.S3_LOGIN_CMD)}`)
+//   await proceedYesNo(`Have all of these commands succeeded?`)
+// }
 
-const uploadToS3 = async () => {
-  stepTitle('📤 Upload to S3')
-  console.log('On another shell, please run the following commands:')
-  await readInFile('./webpack.config.babel.js',
-    /'BASE_32_VERSION'\s*: '([A-Z]+)'/,
-    (matchGroup) => {
-      console.log(`${chalk.bold.yellow(`${config.data.UPLOAD_CMD} ${config.data.S3_BUCKET}${config.data.BASE_32_FOLDER_PATH}/${matchGroup[1]}/ ${config.data.s3Flags}`)}`)
-      const versionPath = config.data.versionRC ? config.data.versionRC : VERSION
-      console.log(`${chalk.bold.yellow(`${config.data.UPLOAD_CMD} ${config.data.S3_BUCKET}${config.data.RELEASES_FOLDER_PATH}/${versionPath}/ ${config.data.s3Flags}`)}`)
-    }
-  )
-  await new Promise(resolve => setTimeout(resolve, 1000))
-}
+// const uploadToS3 = async () => {
+//   stepTitle('📤 Upload to S3')
+//   console.log('On another shell, please run the following commands:')
+//   await readInFile('./webpack.config.babel.js',
+//     /'BASE_32_VERSION'\s*: '([A-Z]+)'/,
+//     (matchGroup) => {
+//       console.log(`${chalk.bold.yellow(`${config.data.UPLOAD_CMD} ${config.data.S3_BUCKET}${config.data.BASE_32_FOLDER_PATH}/${matchGroup[1]}/ ${config.data.s3Flags}`)}`)
+//       const versionPath = config.data.versionRC ? config.data.versionRC : VERSION
+//       console.log(`${chalk.bold.yellow(`${config.data.UPLOAD_CMD} ${config.data.S3_BUCKET}${config.data.RELEASES_FOLDER_PATH}/${versionPath}/ ${config.data.s3Flags}`)}`)
+//     }
+//   )
+//   await new Promise(resolve => setTimeout(resolve, 1000))
+// }
 
-const didS3uploadSucceed = async () => {
-  console.log('Make sure style.css, onfido.min.js and onfido.crossDevice.min.js are in the S3 folder')
-  await proceedYesNo('Have all of these commands succeeded and the files are in the S3 folder?')
-}
+// const didS3uploadSucceed = async () => {
+//   console.log('Make sure style.css, onfido.min.js and onfido.crossDevice.min.js are in the S3 folder')
+//   await proceedYesNo('Have all of these commands succeeded and the files are in the S3 folder?')
+// }
 
 const checkNPMUserIsLoggedIn = async () => {
   const isLoggedIn = await execWithErrorHandling('npm whoami', npmLoginInstruction)

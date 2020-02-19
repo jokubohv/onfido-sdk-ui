@@ -1,8 +1,7 @@
-const secret = require('./releaseSecret')
+
 
 const Config = module.exports = {
   data: {
-    ...secret,
     safeToClearWorkspace: false,
     versionRC: null,
     isFirstReleaseIteration: false,
