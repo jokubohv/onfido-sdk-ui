@@ -1,6 +1,6 @@
 # Onfido SDK UI Layer
 
-[![Build Status](https://travis-ci.org/onfido/onfido-sdk-ui.svg?branch=master)](https://travis-ci.org/onfido/onfido-sdk-ui)
+[![Build Status](https://travis-ci.org/onfido/onfido-sdk-ui-hv.svg?branch=master)](https://travis-ci.org/onfido/onfido-sdk-ui-hv)
 
 ## Table of contents
 
@@ -82,7 +82,7 @@ And the CSS styles:
 
 #### Example app
 
-[JSFiddle example here.](https://jsfiddle.net/gh/get/library/pure/onfido/onfido-sdk-ui/tree/master/demo/fiddle/)
+[JSFiddle example here.](https://jsfiddle.net/gh/get/library/pure/onfido/onfido-sdk-ui-hv/tree/master/demo/fiddle/)
 Simple example using script tags.
 
 #### 4.2 NPM style import
@@ -90,15 +90,15 @@ Simple example using script tags.
 You can also import it as a module into your own JS build system (tested with Webpack).
 
 ```sh
-$ npm install --save onfido-sdk-ui
+$ npm install --save onfido-sdk-ui-hv
 ```
 
 ```js
 // ES6 module import
-import {init} from 'onfido-sdk-ui'
+import {init} from 'onfido-sdk-ui-hv'
 
 // commonjs style require
-var Onfido = require('onfido-sdk-ui')
+var Onfido = require('onfido-sdk-ui-hv')
 ```
 
 The **CSS style** will be included **inline with the JS code** when the library is imported.
@@ -577,7 +577,7 @@ In order to mitigate potential cross-site scripting issues, most modern browsers
 
 ### Support
 
-Please open an issue through [GitHub](https://github.com/onfido/onfido-sdk-ui/issues). Please be as detailed as you can. Remember **not** to submit your token in the issue. Also check the closed issues to check whether it has been previously raised and answered.
+Please open an issue through [GitHub](https://github.com/onfido/onfido-sdk-ui-hv/issues). Please be as detailed as you can. Remember **not** to submit your token in the issue. Also check the closed issues to check whether it has been previously raised and answered.
 
 If you have any issues that contain sensitive information please send us an email with the ISSUE: at the start of the subject to [js-sdk@onfido.com](mailto:js-sdk@onfido.com).
 

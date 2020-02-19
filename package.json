@@ -1,11 +1,11 @@
 {
-  "name": "onfido-sdk-ui",
-  "version": "5.7.0",
+  "name": "onfido-sdk-ui-hv",
+  "version": "5.7.2",
   "description": "JavaScript SDK view layer for Onfido identity verification",
   "author": "SDK Customer Support <js-sdk@onfido.com> (https://github.com/onfido)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/onfido/onfido-sdk-ui.git"
+    "url": "https://github.com/jokubohv/onfido-sdk-ui-hv.git"
   },
   "license": "MIT",
   "scripts": {

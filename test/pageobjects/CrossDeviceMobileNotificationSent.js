@@ -3,12 +3,12 @@ import { verifyElementCopy } from '../utils/mochaw'
 import { asyncForEach } from '../utils/async'
 
 class CrossDeviceMobileNotificationSent extends BasePage {
-  get submessage() { return this.$('.onfido-sdk-ui-crossDevice-MobileNotificationSent-submessage')}
-  get itMayTakeFewMinutesMessage() { return this.$('.onfido-sdk-ui-crossDevice-MobileNotificationSent-boldMessage')}
-  async yourMobilePhoneIcon() { return this.waitAndFind('.onfido-sdk-ui-Theme-icon')}
-  get tipsHeader() { return this.$('.onfido-sdk-ui-Theme-header')}
-  get tips() { return this.$('.onfido-sdk-ui-Theme-helpList li')}
-  get resendLink() { return this.$('.onfido-sdk-ui-crossDevice-MobileNotificationSent-cancel')}
+  get submessage() { return this.$('.onfido-sdk-ui-hv-crossDevice-MobileNotificationSent-submessage')}
+  get itMayTakeFewMinutesMessage() { return this.$('.onfido-sdk-ui-hv-crossDevice-MobileNotificationSent-boldMessage')}
+  async yourMobilePhoneIcon() { return this.waitAndFind('.onfido-sdk-ui-hv-Theme-icon')}
+  get tipsHeader() { return this.$('.onfido-sdk-ui-hv-Theme-header')}
+  get tips() { return this.$('.onfido-sdk-ui-hv-Theme-helpList li')}
+  get resendLink() { return this.$('.onfido-sdk-ui-hv-crossDevice-MobileNotificationSent-cancel')}
 
   async verifyTitle(copy) {
     const mobileNotificationSentStrings = copy.cross_device

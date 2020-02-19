@@ -105,21 +105,21 @@ However, this has potentially created a breaking change for those consuming the 
 #### Example of old behaviour
 
 ```js
-import Onfido from 'onfido-sdk-ui'
+import Onfido from 'onfido-sdk-ui-hv'
 
 Onfido.init(...)
 ```
 
 #### Example of new behaviour
 ```js
-import {init} from 'onfido-sdk-ui'
+import {init} from 'onfido-sdk-ui-hv'
 init(...)
 ```
 
 or
 
 ```js
-import * as Onfido from 'onfido-sdk-ui'
+import * as Onfido from 'onfido-sdk-ui-hv'
 Onfido.init(...)
 ```
 
@@ -127,14 +127,14 @@ Onfido.init(...)
 
 - We have internally changed the CSS units used in the SDK to be relative (`em`) units.
 
-Therefore, if you previously set the font-size of `.onfido-sdk-ui-Modal-inner`, it is recommended that you remove this `font-size` override.
+Therefore, if you previously set the font-size of `.onfido-sdk-ui-hv-Modal-inner`, it is recommended that you remove this `font-size` override.
 
 This is because we are looking to make the SDK compatible with `em`, but first we need to remove media queries which are not really compatible with that unit.
 
 #### Example of old behaviour
 
 ```css
-.onfido-sdk-ui-Modal-inner {
+.onfido-sdk-ui-hv-Modal-inner {
   font-size: 20px;
 }
 ```

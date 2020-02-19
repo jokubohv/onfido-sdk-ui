@@ -46,7 +46,7 @@ const baseStyleLoaders = (modules, withSourceMap) => [
         getLocalIdent: (context, localIdentName, localName) => {
           const basePath = path.relative(`${__dirname}/src/components`, context.resourcePath)
           const baseDirFormatted = path.dirname(basePath).replace('/','-')
-          return `onfido-sdk-ui-${baseDirFormatted}-${localName}`
+          return `onfido-sdk-ui-hv-${baseDirFormatted}-${localName}`
         }
       } : modules
     }

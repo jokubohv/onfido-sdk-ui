@@ -2,15 +2,15 @@ import BasePage from './BasePage.js'
 import { verifyElementCopy } from '../utils/mochaw'
 
 class Confirm extends BasePage {
-  get message() { return this.$('.onfido-sdk-ui-Confirm-message')}
-  get redoBtn() { return this.$('.onfido-sdk-ui-Confirm-btn-secondary')}
-  async confirmBtn() { return this.waitAndFind('.onfido-sdk-ui-Confirm-btn-primary')}
-  get uploaderError() { return this.$('.onfido-sdk-ui-Uploader-error')}
-  get errorTitleText() { return this.$('.onfido-sdk-ui-Error-title-text')}
-  get errorTitleIcon() { return this.$('.onfido-sdk-ui-Error-title-icon-error')}
-  get warningTitleIcon() { return this.$('.onfido-sdk-ui-Error-title-icon-warning')}
-  get errorInstruction() { return this.$('.onfido-sdk-ui-Error-instruction-text')}
-  get uploadedVideo() { return this.$('.onfido-sdk-ui-Confirm-CaptureViewer-video')}
+  get message() { return this.$('.onfido-sdk-ui-hv-Confirm-message')}
+  get redoBtn() { return this.$('.onfido-sdk-ui-hv-Confirm-btn-secondary')}
+  async confirmBtn() { return this.waitAndFind('.onfido-sdk-ui-hv-Confirm-btn-primary')}
+  get uploaderError() { return this.$('.onfido-sdk-ui-hv-Uploader-error')}
+  get errorTitleText() { return this.$('.onfido-sdk-ui-hv-Error-title-text')}
+  get errorTitleIcon() { return this.$('.onfido-sdk-ui-hv-Error-title-icon-error')}
+  get warningTitleIcon() { return this.$('.onfido-sdk-ui-hv-Error-title-icon-warning')}
+  get errorInstruction() { return this.$('.onfido-sdk-ui-hv-Error-instruction-text')}
+  get uploadedVideo() { return this.$('.onfido-sdk-ui-hv-Confirm-CaptureViewer-video')}
 
   async verifyCheckReadabilityMessage(copy) {
     const confirmStrings = copy.confirm
